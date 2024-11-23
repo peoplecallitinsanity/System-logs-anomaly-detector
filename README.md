@@ -41,7 +41,27 @@ Ensure the following libraries are installed:
 ### How to Use the Script
 The main function, **run_json**, processes all **.pcap** files in the specified input directories and outputs flattened **JSON** data to the output directories.
 
-## Data Preprocessing
+## Data Preprocessing 🛠️
+
+The data preprocessing stage is crucial for preparing the raw JSON log data for the machine learning model. Here's how we approached it:
+
+### JSON Data Extraction and Transformation 📄
+The function `make_df` iterates through files in specified directories, reads JSON formatted files, and extracts relevant data. We use a recursive function `flatten_json` to handle nested data structures within JSON files, ensuring all nested keys are transformed into a flat structure suitable for dataframe conversion. This flat structure allows easier manipulation and integration of data into our model.
+
+### Data Merging 🔗
+After converting individual JSON files into dataframes (`df_train` for training data and `df_test` for test data), we concatenate these dataframes into a single dataframe `df_combined`. This merged dataframe facilitates unified processing in subsequent steps.
+
+### Handling Missing Values 🚫
+The `drop_columns_with_nan` function is employed to remove columns with excessive missing values (above a 3% threshold). This step helps in reducing the dimensionality of the data, ensuring that the model only trains on features with sufficient data points.
+
+### Encoding Categorical Data 🔢
+In the `encode_text_columns` function, categorical data columns are encoded into numerical values using label encoding. This conversion is essential since our machine learning model, based on neural networks, requires numerical input.
+
+### Final Dataset Preparation 📊
+After preprocessing, we separate the combined dataframe back into training and testing datasets. The training dataset undergoes further processing to separate features (`X`) and labels (`y`), which are then converted into PyTorch tensors. These tensors are used to create a `TensorDataset`, which is fed into a `DataLoader` for efficient batch processing during model training.
+
+This comprehensive preprocessing pipeline ensures that the input data is clean, structured, and ready for effective training of the neural network, maximizing the performance and accuracy of our anomaly detection system.
+
 
 ## Model 🌐
 ### Neural Network Model Description 🧠
