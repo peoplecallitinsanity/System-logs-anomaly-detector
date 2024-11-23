@@ -1,16 +1,16 @@
-# System-logs-anomaly-detector
+# System Logs Anomaly Detector - CodZilla
 
-## Project Decription
 ## Project Description 🚀
 
-This project was developed during the 12th edition of the EESTEC OLYMPICS Hackathon. Our team's goal was to classify Windows system logs to identify abnormal behaviors using neural networks. We extracted JSON events from pcap files, which were then used to train and test our model.
+This project was developed during the 12th edition of the EESTEC OLYMPICS Hackathon, in November 2024. Our team's goal was to classify Windows system logs to identify abnormal behaviors using neural networks. We extracted JSON events from pcap files, which were then used to train and test our model.
 
 ### Team Composition and Roles 🧑‍💻👩‍💻
 - **Maxim**: Developed the PCAP to JSON Processor Script, transforming pcap files into analyzable JSON format.
 - **Vlada and Loredana**: Worked on Data Engineering and the Neural Network Model using PyTorch, focusing on the classification of the system log events.
+- **Together**: Presented our project and achieved an impressive 90% accuracy with our model, demonstrating the effectiveness of our data processing and machine learning techniques.
 
 ### Environment and Setup 📂
-The project is set up in an isolated Ubuntu container, structured as follows:
+The project was set up and tested in an isolated Ubuntu container, structured as follows:
 - `./DataFolder`: Includes all necessary packages for offline installation via `packageScript.sh`.
 - `./InputData/train`: Contains training data files (labeled).
 - `./InputData/test`: Contains test data files (unlabeled).
@@ -42,6 +42,6 @@ Ensure the following libraries are installed:
 ### How to Use the Script
 The main function, **run_json**, processes all **.pcap** files in the specified input directories and outputs flattened **JSON** data to the output directories.
 
-## Data Engineering 
+## Data Preprocessing
 
 ## Model
