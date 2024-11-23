@@ -11,14 +11,13 @@ This project was developed during the 12th edition of the EESTEC OLYMPICS Hackat
 
 ### Environment and Setup 📂
 The project was set up and tested in an isolated Ubuntu container, structured as follows:
-- `./DataFolder`: Includes all necessary packages for offline installation via `packageScript.sh`.
 - `./InputData/train`: Contains training data files (labeled).
 - `./InputData/test`: Contains test data files (unlabeled).
 - `./source`: Contains the main project files, including `startScript.sh` which runs the project.
 - `./output/labels`: The output directory where the JSON file with the predicted labels for each test file is saved.
 
 ### Constraints and Execution ⏳
-The execution within the container is limited to 2 minutes, focusing on optimizing the processing of data efficiently. The package installation phase is separate and does not affect this time limit.
+The execution within the container was limited to 2 minutes during the testing part, so our project is focused on optimizing the processing of data efficiently. The package installation phase is separate and does not affect this time limit.
 
 ### Output 📄
 The output of the project is a JSON file located in `./output/labels`. This file lists the predicted label for each test file, providing insights into potential security threats detected in the system logs.
