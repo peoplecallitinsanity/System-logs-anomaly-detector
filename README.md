@@ -1,4 +1,4 @@
-# System Logs Anomaly Detector - CodZilla
+# System Logs Anomaly Detector - CodZilla 🐲
 
 ## Project Description 🚀
 
